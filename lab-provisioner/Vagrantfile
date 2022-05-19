@@ -1,0 +1,49 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+IPlb = "10.0.0.10"
+IPweb1 = "10.0.0.11"
+IPweb2 = "10.0.0.12"
+RAM = 1024
+CPU = 1
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "lb" do |lb|
+    lb.vm.box = "ubuntu/xenial64"
+    lb.vm.network "private_network", ip: IPlb
+    lb.vm.provision :shell do |shell|
+      shell.path = "https://raw.githubusercontent.com/PacktPublishing/Hands-On-DevOps-with-Vagrant/master/Chapter07/lb.sh"
+    end
+    lb.vm.provider "virtualbox" do |v|
+      v.memory = RAM
+      v.cpus = CPU
+    end
+  end
+
+  config.vm.define "web1" do |web1|
+    web1.vm.box = "ubuntu/xenial64"
+    web1.vm.network "private_network", ip: IPweb1
+    web1.vm.provision :shell do |shell|
+      shell.path = "https://raw.githubusercontent.com/PacktPublishing/Hands-On-DevOps-with-Vagrant/master/Chapter07/web.sh"
+      shell.args = "1"
+    end
+    web1.vm.provider "virtualbox" do |v|
+      v.memory = RAM
+      v.cpus = CPU
+    end
+  end
+
+  config.vm.define "web2" do |web2|
+    web2.vm.box = "ubuntu/xenial64"
+    web2.vm.network "private_network", ip: IPweb2
+    web2.vm.provision :shell do |shell|
+      shell.path = "https://raw.githubusercontent.com/PacktPublishing/Hands-On-DevOps-with-Vagrant/master/Chapter07/web.sh"
+      shell.args = "2"
+    end
+    web2.vm.provider "virtualbox" do |v|
+      v.memory = RAM
+      v.cpus = CPU
+    end
+  end
+end
