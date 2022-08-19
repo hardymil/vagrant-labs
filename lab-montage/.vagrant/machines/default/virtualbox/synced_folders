@@ -1,1 +1,0 @@
-{"virtualbox":{"/usr/share/nginx/html/":{"guestpath":"/usr/share/nginx/html","hostpath":"C:/Users/hmilalu/Documents/vagrant-labs/lab-montage/static-website-example","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/hmilalu/Documents/vagrant-labs/lab-montage","disabled":false,"__vagrantfile":true}}}
