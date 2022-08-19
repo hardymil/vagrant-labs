@@ -3,7 +3,7 @@
 #import panda as pd 
 import os
 
-TEST_PATH = r"C:\Users\hmilalu\.spyder-py3\Setup.Lst"
+TEST_PATH = "Setup.Lst"
 
 print("stating to read ...")
 
