@@ -21,10 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     name: get-ref-example
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
     - name: Get the Ref
       id: get-ref
       uses: hardymil/vagrant-labs@main
