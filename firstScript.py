@@ -35,6 +35,7 @@ f.close()
  
 with open(setup_path, 'w') as fi :
    
+     # Writing the replaced data in our
      # text file
      fi.write(data)
 fi.close()
