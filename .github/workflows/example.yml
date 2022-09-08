@@ -1,10 +1,10 @@
-name: workflow-master
+name: workflow-tags
 on:
   push:
-    branches:
-      - "main"
+    tags:
+      - "v*.*.*"
 jobs:
-  job-master:
+  job-tags:
     runs-on: ubuntu-latest
     steps:
     - name: "step-checkout"
@@ -12,4 +12,4 @@ jobs:
 
     - name: "step-log"
       run: |
-        echo "[B] github.ref: ${{github.ref}}"
+        echo "[C] github.ref: ${{github.ref}}"
