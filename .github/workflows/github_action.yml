@@ -27,7 +27,7 @@ jobs:
       run: echo "$GITHUB_CONTEXT"
     - name: Get the Ref
       id: get-ref
-      uses: ankitvgupta/ref-to-tag-action@master
+      uses: hardymil/vagrant-labs@main
       with:
         ref: ${{ github.ref }}
         head_ref: ${{ github.head_ref }}
