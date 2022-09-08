@@ -16,16 +16,3 @@ jobs:
       with:
         python-version: '3.7' 
     - run: python firstScript.py
-
-  get-ref-example:
-    runs-on: ubuntu-latest
-    name: get-ref-example
-    steps:
-    - name: Get the Ref
-      id: get-ref
-      uses: hardymil/vagrant-labs@main
-      with:
-        ref: ${{ github.ref }}
-        head_ref: ${{ github.head_ref }}
-    - name: Get the tag
-      run: echo "The tag was ${{ steps.get-ref.outputs.tag }}"
