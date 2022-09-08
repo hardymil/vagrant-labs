@@ -1,15 +1,15 @@
-on: [pull_request, push]
-
+name: workflow-master
+on:
+  push:
+    branches:
+      - "main"
 jobs:
-  get-ref-example:
+  job-master:
     runs-on: ubuntu-latest
-    name: get-ref-example
     steps:
-    - name: Get the Ref
-      id: get-ref
+    - name: "step-checkout"
       uses: actions/checkout@v1
-      with:
-        ref: ${{ github.ref }}
-        head_ref: ${{ github.head_ref }}
-    - name: Get the tag
-      run: echo "The tag was ${{ steps.get-ref.outputs.tag }}"
+
+    - name: "step-log"
+      run: |
+        echo "[B] github.ref: ${{github.ref}}"
